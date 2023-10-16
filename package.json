@@ -1,0 +1,35 @@
+{
+  "name": "konnco",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.13",
+    "@mui/joy": "^5.0.0-beta.10",
+    "@mui/material": "^5.14.13",
+    "axios": "^1.5.1",
+    "env": "^0.0.2",
+    "midtrans-client": "^1.3.1",
+    "mongoose": "^7.6.2",
+    "next": "13.5.4",
+    "next-auth": "^4.23.2",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-fast-marquee": "^1.6.1",
+    "react-responsive-carousel": "^3.2.23",
+    "react-text-transition": "^3.1.0",
+    "swiper": "^10.3.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10",
+    "postcss": "^8",
+    "tailwindcss": "^3"
+  }
+}
