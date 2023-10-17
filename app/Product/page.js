@@ -17,8 +17,8 @@ import { cartcontext } from "../components/Cartcontext";
 export default function page() {
   const [data, setData] = useState();
   const { cart, addItemToCart } = useContext(cartcontext);
-  console.log(cart);
-  console.log(data);
+  const [pag, setPag] = useState();
+  console.log(pag);
   useEffect(() => {
     axios.get("https://dummyjson.com/products").then(async (item) => {
       let res = await item.data;
@@ -138,7 +138,14 @@ export default function page() {
               })}
           </div>
           <div className=" flex justify-center align-middle justify-items-center mb-20">
-            <Pagination count={10} size="large" color="primary" />
+            <Pagination
+              count={10}
+              size="large"
+              color="primary"
+              onChange={(e, value) => {
+                setPag(value);
+              }}
+            />
           </div>
         </div>
       </div>

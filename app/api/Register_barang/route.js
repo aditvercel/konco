@@ -34,10 +34,23 @@ export async function PATCH(request) {
 
   try {
     const res = await request.json();
-    const { id, Namabarang, Hargabarang, Stockbarang, Deskripsibarang } = res;
+    const {
+      id,
+      Namabarang,
+      Hargabarang,
+      Stockbarang,
+      Deskripsibarang,
+      Gambarbarang,
+    } = res;
     console.log("ini adalah res nya ", res);
 
-    const update = { Namabarang, Hargabarang, Stockbarang, Deskripsibarang };
+    const update = {
+      Namabarang,
+      Hargabarang,
+      Stockbarang,
+      Deskripsibarang,
+      Gambarbarang,
+    };
 
     // Find the document by its _id and update it
     const updatedCharacter = await Barang.findByIdAndUpdate(id, update, {

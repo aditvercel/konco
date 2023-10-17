@@ -11,6 +11,24 @@ export default function Tablerow({ data, index }) {
   const [price, setPrice] = useState(data.Hargabarang);
   const [stock, setStock] = useState(data.Stockbarang);
   const [description, setDescription] = useState(data.Deskripsibarang);
+  const [base64String, setBase64String] = useState("");
+  console.log("gambarnya", data.Gambarbarang);
+  console.log("hasil convert : ", base64String, typeof base64String);
+
+  const handleFileInputChange = (event) => {
+    const file = event.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+
+      reader.onload = (e) => {
+        const base64 = e.target.result;
+        setBase64String(base64);
+      };
+
+      reader.readAsDataURL(file);
+    }
+  };
 
   const handleSave = async () => {
     let res = await axios.patch("http://localhost:3000/api/Register_barang", {
@@ -18,6 +36,7 @@ export default function Tablerow({ data, index }) {
       Namabarang: name,
       Hargabarang: price,
       Stockbarang: stock,
+      Gambarbarang: base64String,
       Deskripsibarang: description,
     });
     window.location.reload();
@@ -64,7 +83,12 @@ export default function Tablerow({ data, index }) {
             />
           </td>
           <td>
-            <div className="w-20 h-20 bg-red-500"></div>
+            <input
+              type="file"
+              accept=".jpg,.png,.jpeg"
+              className="w-full"
+              onChange={handleFileInputChange}
+            />
           </td>
           <td>
             <div>
@@ -92,7 +116,13 @@ export default function Tablerow({ data, index }) {
             {data.Deskripsibarang}
           </td>
           <td>
-            <div className="w-20 h-20 bg-red-500"></div>
+            <img
+              className="w-20 h-20"
+              src={
+                data.Gambarbarang ||
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpLA0jC7YBQqrWoXPU6juFeubvTYAOSJ6zZ3YGC2vh&s"
+              }
+            ></img>
           </td>
           <td>
             <div>

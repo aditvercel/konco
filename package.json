@@ -25,6 +25,7 @@
     "react-fast-marquee": "^1.6.1",
     "react-responsive-carousel": "^3.2.23",
     "react-text-transition": "^3.1.0",
+    "react-to-print": "^2.14.15",
     "swiper": "^10.3.1"
   },
   "devDependencies": {

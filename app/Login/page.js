@@ -54,6 +54,21 @@ export default function page() {
               onChange={handleChange}
             ></input>
           </div>
+          <div className=" text-xs">
+            <p className="mb-2">demo account : </p>
+            <div className="flex gap-10">
+              <div className="grid">
+                <p>ADMIN</p>
+                <p>username : aditya</p>
+                <p>Password : aditya</p>
+              </div>
+              <div className="grid">
+                <p>PUBLIC</p>
+                <p>username : joni</p>
+                <p>Password : joni</p>
+              </div>
+            </div>
+          </div>
           <p className=" text-end">regiter</p>
           {session ? (
             <button
