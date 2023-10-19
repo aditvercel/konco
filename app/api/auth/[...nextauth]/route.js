@@ -11,7 +11,7 @@ const handler = NextAuth({
         // Add logic here to look up the user from the credentials supplied
         console.log("credentials", credentials);
         console.log("req", req.body);
-        let res = await axios.post("http://localhost:3000/api/Login", req.body);
+        let res = await axios.post("/api/Login", req.body);
         let { UserName, _id, account_type } = res.data.user;
         const user = {
           id: _id,
