@@ -7,6 +7,7 @@ const handler = NextAuth({
   providers: [
     CredentialsProvider({
       async authorize(credentials, req) {
+        connectToDB();
         // Add logic here to look up the user from the credentials supplied
         console.log("credentials", credentials);
         console.log("req", req.body);

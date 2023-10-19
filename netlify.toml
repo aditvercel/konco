@@ -1,4 +1,0 @@
-[build]
-commmand = "npm run build"
-functions = "functions"
-
