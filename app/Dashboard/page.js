@@ -33,7 +33,7 @@ export default function Page() {
 
   console.log(data);
   useEffect(() => {
-    axios.get("http://localhost:3000/api/Register_barang").then((item) => {
+    axios.get("/api/Register_barang").then((item) => {
       setData(item.data);
     });
   }, []);

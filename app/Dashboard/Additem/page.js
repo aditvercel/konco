@@ -49,7 +49,7 @@ export default function page() {
     });
   };
   const handleSave = () => {
-    axios.post("http://localhost:3000/api/Register_barang", {
+    axios.post("/api/Register_barang", {
       ...typing,
       Gambarbarang: base64String,
     });

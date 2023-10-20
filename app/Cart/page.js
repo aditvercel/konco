@@ -79,7 +79,7 @@ export default function page() {
           className="border w-40 h-20 self-center shadow shadow-black text-center rounded-lg"
           onClick={() => {
             axios
-              .post("http://localhost:3000/api/Checkout", {
+              .post("/api/Checkout", {
                 total: calculateTotalPrice(),
               })
               .then((item) => {
